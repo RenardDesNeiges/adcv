@@ -276,10 +276,10 @@
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{lightgray}{HTML}{999999}
 \definecolor{gray}{HTML}{555555}
-\definecolor{paynegray}{HTML}{353E49}
-\definecolor{black}{HTML}{000000}
+\definecolor{paynegray}{HTML}{07070C}
+\definecolor{black}{HTML}{07070C}
 % \definecolor{paynegray}{HTML}{272F38}
-\definecolor{coralpink}{HTML}{FF706C}
+\definecolor{coralpink}{HTML}{E07A5F}
 
 \ifprint
   \colorlet{regulartext}{black}
@@ -323,6 +323,8 @@
 % Fonts
 
 \RequirePackage{fontspec}
+
+\RequirePackage{wrapfig}
 
 \setmainfont[
   Path = fonts/,
@@ -397,6 +399,9 @@
 
   \vspace{\baselineskip}%
 
+
+
+
   \ifdefined\adcv@websiteurl%
     \ifx\adcv@websiteurl\empty%
       \def\adcv@website{}%
@@ -409,10 +414,16 @@
 
   \begin{center}%
     \ifonline%
-      \adcv@email~\adcv@website%
+      
+      \phoneicon~\adcv@phone
 
+      \adcv@email~\adcv@website%
+      
       \adcv@address%
     \else%
+
+      \phoneicon~\adcv@phone
+
       \adcv@email~\adcv@website%
 
       \adcv@address~\adcv@telephone%
